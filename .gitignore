@@ -1,0 +1,8 @@
+# ignore all dataset folders
+datasets/
+
+# ignore all train logs
+train_log/
+
+# ignore any zip file
+*.zip
