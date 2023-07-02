@@ -6,3 +6,6 @@ train_log/
 
 # ignore any zip file
 *.zip
+
+./DS_Store
+*.pyc
