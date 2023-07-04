@@ -1,19 +1,5 @@
 import torch
 import torch.nn as nn
-from dataloader_torch import *
-from torch.utils.data import DataLoader
-import torch.optim as optim
-import numpy as np
-import os
-import argparse
-from sklearn import svm
-from sklearn.decomposition import PCA
-from sklearn.manifold import TSNE
-import datetime
-
-from torch.utils.tensorboard import SummaryWriter
-
-from dataloader_torch import LoaderDotSizeVar
 
 if torch.cuda.is_available():
     device = torch.device("cuda:0")
