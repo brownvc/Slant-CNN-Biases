@@ -30,7 +30,18 @@ Paper accepted for publication at ACM Transactions on Applied Perception (TAP).
 > these findings suggest that unsupervised CNN models can share similar predictions to the human visual system.
 
 ## Project Overview
-Todo: present the main results here
+
+### Stimuli
+
+We generate training data by rendering random Polka dot textures on surface with concave or convex dihedral angles.
+In the first dataset (sample images on the left), we control the camera field of view (FOV) and the optical slant;
+in the second dataset (sample images on the right), we additionally add texture irregularity as a controlled variable.
+
+<p align="middle">
+    <img src="./imgs/data1.jpeg" width="200" />
+    &nbsp; &nbsp; &nbsp; &nbsp;
+    <img src="./imgs/data2.jpeg" width="200" />
+</p>
 
 ## Required packages
 

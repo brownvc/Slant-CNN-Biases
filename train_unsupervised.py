@@ -82,8 +82,8 @@ if __name__ == '__main__':
     train_loader = DataLoader(dataset_train, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(dataset_test, batch_size=batch_size, shuffle=False)
 
-    loss_fn = nn.MSELoss()
-    # loss_fn = nn.L1Loss()
+    # loss_fn = nn.MSELoss()
+    loss_fn = nn.L1Loss()
 
     epoch = 0
     iteration = 0
