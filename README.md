@@ -1,4 +1,4 @@
-# Human-like Biases in CNNs for the Perception of Slant from Texture
+# On Human-like Biases in CNNs for the Perception of Slant from Texture
 
 ### Paper | [Poster](https://shorturl.at/guLP6)
 
@@ -16,14 +16,15 @@ Paper accepted for publication at ACM Transactions on Applied Perception (TAP).
 
 ## Abstract
 
-> Depth estimation is fundamental to 3D perception. This study investigates whether convolutional neural networks 
-> (CNN) can display the same biases as humans when predicting the sign of curvature and depth of surfaces under 
+> Depth estimation is fundamental to 3D perception, and humans are known to have biased estimates of depth.
+> This study investigates whether convolutional neural networks 
+> (CNNs) can be biased when predicting the sign of curvature and depth of surfaces of textured surfaces under 
 > different viewing conditions (field of view) and surface parameters (slant and texture irregularity). 
-> This hypothesis is drawn from the idea that texture gradients described by local neighborhoods -- a cue identified 
-> in human vision literature -- are also representable within convolutional neural networks. 
+> This hypothesis is drawn from the idea that texture gradients described by local neighborhoods—a cue identified 
+> in human vision literature—are also representable within convolutional neural networks. 
 > To this end, we trained both unsupervised and supervised CNN models on the renderings of slanted surfaces with 
 > random Polka dot patterns and analyzed their internal latent representations. The results demonstrated that the 
-> unsupervised models replicate human biases well across all experiments, while supervised CNN models do not exhibit 
+> unsupervised models have similar prediction biases as humans across all experiments, while supervised CNN models do not exhibit 
 > similar biases. The latent spaces of the unsupervised models can be linearly separated into axes representing field 
 > of view and optical slant. For supervised models, this ability varies substantially with model architecture and the 
 > kind of supervision (continuous slant vs. sign of slant). Even though this study says nothing of any shared mechanism, 
