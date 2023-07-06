@@ -164,13 +164,13 @@ class VAE(nn.Module):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--batch_size', type=int, default=64)
+    parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--nb_epochs', type=int, default=50)
     parser.add_argument('--dataset', type=str, default='data_exp1')
     parser.add_argument('--sample_interval', type=int, default=25)
     parser.add_argument('--save_interval', type=int, default=50)
     parser.add_argument('--latent_dim', type=int, default=64)
-    parser.add_argument('--lr', type=float, default=2e-4)
+    parser.add_argument('--lr', type=float, default=1e-2)
     parser.add_argument('--gpus', type=int, default=1)
     parser.add_argument('--lambda_1', type=float, default=0.)
     parser.add_argument('--lambda_2', type=float, default=1)

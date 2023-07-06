@@ -146,7 +146,7 @@ class UNet(nn.Module):
         self.relu4 = nn.LeakyReLU(0.2)
 
         self.max_pool1 = nn.MaxPool2d((4, 4), padding=1)
-        self.linear1 = nn.Linear(1152, latent_dim)
+        self.linear1 = nn.Linear(2048, latent_dim)
         self.relu = nn.LeakyReLU()
         self.linear2 = nn.Linear(latent_dim, 2)
 
@@ -456,11 +456,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--nb_epochs', type=int, default=100)
-    parser.add_argument('--dataset', type=str, default='combined_rand')
+    parser.add_argument('--dataset', type=str, default='data_exp1')
     parser.add_argument('--sample_interval', type=int, default=10)
     parser.add_argument('--save_interval', type=int, default=25)
     parser.add_argument('--latent_dim', type=int, default=64)
-    parser.add_argument('--lr', type=float, default=5e-4)
+    parser.add_argument('--lr', type=float, default=2e-3)
     parser.add_argument('--gpus', type=int, default=1)
     parser.add_argument('--pretrained', type=bool, default=False)
     parser.add_argument('--model_name', type=str, default='supervised_sign')
@@ -522,8 +522,8 @@ if __name__ == '__main__':
     # criterion = nn.BCEWithLogitsLoss()
     criterion = nn.CrossEntropyLoss()
 
-    dataset_train = LoaderDotSizeVar(dataset_path=os.path.join('dataset', dataset), is_testing=False, nb_chan=3)
-    dataset_test = LoaderDotSizeVar(dataset_path=os.path.join('dataset', dataset), is_testing=True, nb_chan=3)
+    dataset_train = LoaderDotSizeVar(dataset_path=os.path.join('datasets', dataset), is_testing=False, nb_chan=3)
+    dataset_test = LoaderDotSizeVar(dataset_path=os.path.join('datasets', dataset), is_testing=True, nb_chan=3)
     train_loader = DataLoader(dataset_train, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(dataset_test, batch_size=batch_size, shuffle=False)
 
@@ -556,12 +556,9 @@ if __name__ == '__main__':
             if 'physical_slant' in model_name:
                 loss = torch.mean(torch.abs(torch.sigmoid(outputs.float()) - physical_slant_gt[:, None]))
             else:
-                # loss = criterion(outputs.float(), convexity_gt[:, None].float())
                 loss = criterion(outputs.float(), convexity_gt)
 
             loss.backward()
-            # gradient clipping
-            # torch.nn.utils.clip_grad_norm_(model.parameters(), 1.)
             optimizer.step()
 
             print(loss.item())
@@ -605,9 +602,6 @@ if __name__ == '__main__':
                 test_physical_slant.append(physical_slant_t)
                 test_convexity.append(test_convexity_t)
                 test_size_var.append(test_size_var_t)
-
-                # if index > 3:
-                #     break
 
             test_latent = np.concatenate(test_latent, axis=0)
             test_pred_convexity = np.concatenate(test_pred_convexity, axis=0)

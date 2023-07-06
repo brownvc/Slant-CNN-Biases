@@ -1,7 +1,16 @@
 # Human-like Biases in CNNs for the Perception of Slant from Texture
 
+### Paper | [Poster](https://shorturl.at/guLP6)
+
 ## Description
-Official Implementation for "On Human-like Biases in Convolutional Neural Networks for the Perception of Slant from Texture".
+[Yuanhao Wang](https://github.com/HarryWang355),
+[Qian Zhang](https://qianzhanginfo.github.io/),
+Celine Aubuchon,
+Jovan Kemp,
+Fulvio Domini,
+[James Tompkin](https://jamestompkin.com/)
+
+Official codebase for "On Human-like Biases in Convolutional Neural Networks for the Perception of Slant from Texture".
 
 Paper accepted for publication at ACM Transactions on Applied Perception (TAP).
 
@@ -20,11 +29,15 @@ Paper accepted for publication at ACM Transactions on Applied Perception (TAP).
 > kind of supervision (continuous slant vs. sign of slant). Even though this study says nothing of any shared mechanism, 
 > these findings suggest that unsupervised CNN models can share similar predictions to the human visual system.
 
+## Project Overview
+Todo: present the main results here
 
 ## Required packages
 
 To run the codes, please install a recent version of Pytorch, and the following packages:
 opencv, pandas, matplotlib, argparse, sklearn, scipy, rsatoolbox， statsmodels, datetime.
+
+Todo: create and test a requirements.txt file
 
 ## Training Data
 
@@ -45,10 +58,21 @@ To generate the dataset with varying texture irregularities, run
 
 Run the following script for training UNet, UNet- and AE_VGG models:
 
-    python3 train_unsupervised.py --model_name unet --dataset data_exp1 --nb_epochs 50 --sample_interval 25 --save_interval 25
+    python3 train_unsupervised.py --model_name unet --dataset data_exp1  --latent_dim 64 --nb_epochs 50 --sample_interval 25 --save_interval 25 --lr 0.0002 --batch_size 32
 "model_name" argument can be one of "unet", "unet-" or "AE_vgg", 
 and "dataset" argument can be one of "data_exp1" or "data_exp2".
 
 Run the following script to train the VAE model:
 
-    python3 VAE.py --dataset data_exp1 --nb_epochs 50 --sample_interval 25 --save_interval 25
+    python3 VAE.py --dataset data_exp1 --latent_dim 64 --nb_epochs 50 --sample_interval 25 --save_interval 25 --lr 0.001 --batch_size 32
+
+### Train supervised models
+
+Run the following script to train supervised models:
+    
+    python3 train_supervised.py --model_name supervised_sign --backbone unet --dataset data_exp1  --latent_dim 64 --nb_epochs 50 --sample_interval 25 --save_interval 25 --lr 0.0002 --batch_size 32
+
+"model_name" argument can be one of "supervised_sign" or "supervised_slant", each for a different
+supervision signal; "backbone" can be one of "unet" or "resnet18"; "dataset" can be one of "data_exp1"
+or "data_exp2".
+

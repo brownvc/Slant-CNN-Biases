@@ -824,7 +824,7 @@ def supervised_bias_analysis(save_fig=True):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--log_dir', type=str, default='./train_log/unet/data_exp1/epoch_100_lr_0.0001_l_dim_128')
+    parser.add_argument('--log_dir', type=str, default='./train_log/AE_vgg/data_exp1/epoch_50_lr_0.0002_l_dim_64')
     args = parser.parse_args()
 
     log_dir = args.log_dir

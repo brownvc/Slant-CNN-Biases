@@ -184,7 +184,7 @@ def render_data(data_dir, fovs, optical_slants, loc_dis, grid_len, dot_size, bou
                                      % (rep, fov, optical_slant, physical_slant_concave, int(dis / loc_dis[1]))),
                         img_concave / 255.)
                     plt.imsave(
-                        os.path.join(data_dir, 'concave_rep_%02d_fov_%.2f_opt_slant_%.3f_phy_slant_%.3f_var_loc_%d.png'
+                        os.path.join(data_dir, 'convex_rep_%02d_fov_%.2f_opt_slant_%.3f_phy_slant_%.3f_var_loc_%d.png'
                                      % (rep, fov, optical_slant, physical_slant_convex, int(dis / loc_dis[1]))),
                         img_convex / 255.)
 
