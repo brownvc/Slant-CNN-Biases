@@ -1,6 +1,6 @@
 # On Human-like Biases in CNNs for the Perception of Slant from Texture
 
-### Paper | [Poster](https://shorturl.at/guLP6)
+### [Paper](https://dl.acm.org/doi/abs/10.1145/3613451) | [Poster](https://shorturl.at/guLP6) | [Slides](https://onedrive.live.com/edit.aspx?resid=E10E204FB9E6F665!244264&ithint=file%2cpptx&authkey=!AMPSQW4-m0h6XYI)
 
 ## Description
 [Yuanhao Wang](https://github.com/HarryWang355),
@@ -12,7 +12,8 @@ Fulvio Domini,
 
 Official codebase for "On Human-like Biases in Convolutional Neural Networks for the Perception of Slant from Texture".
 
-Paper accepted for publication at ACM Transactions on Applied Perception (TAP).
+Paper was published at a special issue of ACM Transactions on Applied Perception 2023 (TAP) and
+was presented at ACM Symposium on Applied Perception 2023 (SAP).
 
 ## Abstract
 
@@ -21,7 +22,7 @@ Paper accepted for publication at ACM Transactions on Applied Perception (TAP).
 > (CNNs) can be biased when predicting the sign of curvature and depth of surfaces of textured surfaces under 
 > different viewing conditions (field of view) and surface parameters (slant and texture irregularity). 
 > This hypothesis is drawn from the idea that texture gradients described by local neighborhoods—a cue identified 
-> in human vision literature—are also representable within convolutional neural networks. 
+> in human vision literature—are also representable within convolutional neural networks.
 > To this end, we trained both unsupervised and supervised CNN models on the renderings of slanted surfaces with 
 > random Polka dot patterns and analyzed their internal latent representations. The results demonstrated that the 
 > unsupervised models have similar prediction biases as humans across all experiments, while supervised CNN models do not exhibit 
@@ -41,7 +42,7 @@ Todo: create and test a requirements.txt file
 ## Training Data
 
 We generate training data by rendering random Polka dot textures on surface with concave or convex dihedral angles.
-In the first dataset (sample images on the left), we control the camera field of view (FOV) and the optical slant;
+In the first dataset (sample images on the left), we control the surface convexity, camera field of view (FOV), and the optical slant;
 in the second dataset (sample images on the right), we additionally add texture irregularity as a controlled variable.
 
 <p align="middle">
@@ -63,10 +64,10 @@ To generate the dataset with varying texture irregularities, run
 
 ## Key results
 To test whether unsupervised models exhibit human-like perceptual biases for slant estimation from texture cues, we
-first rendered a dataset of stimuli images. Next, we trained unsupervised generative CNN models to learn the statistical
-distributions of the data, along with supervised equivalent models for comparison. Then, we analyze the internal latent
-representations of each model to a) evaluate how stimuli are laid out within it, and to b) assess whether simple distance
-measures from linear classifiers on the latent space can produce biased outcomes. Please refer to the paper for more 
+first rendered a dataset of stimuli. Next, we trained unsupervised generative CNN models to learn the statistical
+distributions of the data, along with supervised models for comparison. Then, we analyzed the internal latent
+representations of each model to a) evaluate how stimuli were laid out within it, and to b) assess whether simple distance
+measures from linear classifiers on the latent space could produce biased outcomes. Please refer to the paper for more 
 detailed results and analyses.
 
 ### Physical factors are disentangled in unsupervised model latent spaces
@@ -78,7 +79,7 @@ detailed results and analyses.
 </p>
 
 **Left**: We visualize the latent space of the U-Net using PCA (first two principal components).
-Data points are color-coded by the FOV or the optical slant values. 
+Data points are color-coded by the FOV and the optical slant values, respectively. 
 
 **Right**: We visualize the latent
 spaces of all four unsupervised models trained on the dataset with varying texture irregularities, 
