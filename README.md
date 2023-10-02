@@ -1,6 +1,6 @@
 # On Human-like Biases in CNNs for the Perception of Slant from Texture
 
-### [Paper](https://dl.acm.org/doi/abs/10.1145/3613451) | [Poster](https://shorturl.at/guLP6) | [Slides](https://onedrive.live.com/edit.aspx?resid=E10E204FB9E6F665!244264&ithint=file%2cpptx&authkey=!AMPSQW4-m0h6XYI)
+### [Paper](https://dl.acm.org/doi/abs/10.1145/3613451) | [Poster](https://shorturl.at/guLP6) | [Slides](https://1drv.ms/p/s!AmX25rlPIA7hjvQoXrshMvk7_xDe3A?e=lDfSMk)
 
 ## Description
 [Yuanhao Wang](https://github.com/HarryWang355),
