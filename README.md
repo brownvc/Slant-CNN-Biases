@@ -5,9 +5,9 @@
 ## Description
 [Yuanhao Wang](https://github.com/HarryWang355),
 [Qian Zhang](https://qianzhanginfo.github.io/),
-Celine Aubuchon,
-Jovan Kemp,
-Fulvio Domini,
+[Celine Aubuchon](https://scholar.google.com/citations?user=VR7YqS0AAAAJ&hl=en),
+[Jovan Kemp](https://scholar.google.com/citations?user=_WT2FUgAAAAJ&hl=en),
+[Fulvio Domini](https://sites.brown.edu/3dipalab/people-2-2/),
 [James Tompkin](https://jamestompkin.com/)
 
 Official codebase for "On Human-like Biases in Convolutional Neural Networks for the Perception of Slant from Texture".
@@ -51,7 +51,7 @@ in the second dataset (sample images on the right), we additionally add texture 
     <img src="./imgs/data2.jpg" width="280" />
 </p>
 
-Datasets can be downloaded from [here](https://drive.google.com/drive/folders/1n5_23rYJzJLuRihrzslswOgLKpKk_qUR?usp=sharing). 
+Datasets can be downloaded from [here](https://drive.google.com/file/d/1PAcXefQ9HhZS77o9CVe0a-qRX8yJeAx_/view?usp=sharing). 
 Or, they can be generated using our scripts below:
 
 To generate the default dataset, run
